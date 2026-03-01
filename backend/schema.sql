@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL,
+    is_admin INTEGER DEFAULT 0
+);
+
+CREATE TABLE posts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    content TEXT NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+);

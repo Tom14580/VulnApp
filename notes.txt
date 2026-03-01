@@ -1,0 +1,13 @@
+later add:
+
+Stored XSS (post content)
+
+IDOR (edit/delete someone else’s post)
+
+CSRF (create post without token)
+
+Admin delete functionality (broken access control)
+
+SQLi in search posts
+
+make profile page IDOR

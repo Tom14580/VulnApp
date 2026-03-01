@@ -1,0 +1,7 @@
+weak app secret key in app.py
+debug set to true in app.py
+database stores passwords in plaintext
+sql injection in /login route (app.py)
+IDOR in /profile id parameter (also user id being sequential makes it vulnerable)
+broken access control in /admin route (app.py)
+wide-open CORS is enabled
