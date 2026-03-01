@@ -27,16 +27,24 @@ Do **NOT** deploy to production.
 - Stored XSS in posts
 - Admin endpoint (no proper access control)
 
-# Setup Instructions
+# ⚙️ Setup Instructions
 
+## Backend (Flask)
+
+```bash
 cd backend
 pip install -r requirements.txt
 python app.py
+```
 
-runs on: **http://127.0.0.1:5000**
+Runs on: **http://127.0.0.1:5000**
 
+## Frontend (React + Vite)
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
-runs on **http://127.0.0.1:5000**
+Runs on: **http://localhost:5173**
