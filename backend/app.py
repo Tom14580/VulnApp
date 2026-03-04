@@ -95,21 +95,6 @@ def profile():
         return {"error": "User not found"}, 404
 
 
-@app.route("/admin")
-def admin_panel():
-    if "user_id" not in session: # only checks if the user is logged in, but does not check if they are an admin
-        return {"error": "Not logged in"}, 401
-
-    db = get_db()
-
-    users = db.execute("SELECT id, username, is_admin FROM users").fetchall()
-
-    return {
-        "message": "Welcome to the admin panel",
-        "users": [dict(user) for user in users]
-    }
-
-
 @app.route("/create_post", methods=["POST"])
 def create_post():
     if "user_id" not in session:
@@ -152,8 +137,29 @@ def me():
         return {"error": "Not logged in"}, 401
     return {
         "id": session.get("user_id"),
-        "username": session.get("username")
+        "username": session.get("username"),
+        "is_admin": session.get("is_admin")
     }
+
+@app.route("/delete_user", methods=["POST"])
+def delete_user():
+    if "user_id" not in session:
+        return {"error": "Not logged in"}, 401
+
+    data = request.get_json()
+    user_id_to_delete = data.get("user_id")
+
+    db = get_db()
+    cursor = db.execute(
+        "DELETE FROM users WHERE id = ?",
+        (user_id_to_delete,)
+    )
+    db.commit()
+
+    if cursor.rowcount > 0:
+        return {"message": "User deleted"}
+    else:
+        return {"error": "User not found"}, 404
 
 if __name__ == "__main__":
     app.run(debug=True) # debug true (misconfiguration)

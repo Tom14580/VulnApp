@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Feed from "./components/Feed";
 import Profile from "./components/Profile";
+import Admin from "./components/Admin";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -40,6 +41,7 @@ function App() {
         />
 
         <Route path="/profile" element={<Profile />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
   );
