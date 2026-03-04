@@ -28,7 +28,7 @@ function Feed() {
     });
 
     setContent("");
-    fetchPosts(); // refresh feed
+    fetchPosts();
   };
 
   return (

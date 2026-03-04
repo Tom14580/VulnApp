@@ -10,4 +10,7 @@ Admin delete functionality (broken access control)
 
 SQLi in search posts
 
-make profile page IDOR
+
+added /delete_user endpoint
+added /admin to Route
+add frontent for /delete functionality

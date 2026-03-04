@@ -3,5 +3,5 @@ debug set to true in app.py
 database stores passwords in plaintext
 sql injection in /login route (app.py)
 IDOR in /profile id parameter (also user id being sequential makes it vulnerable)
-broken access control in /admin route (app.py)
 wide-open CORS is enabled
+/admin page is properly secured but the /delete_user endpoint it uses has broken access control
