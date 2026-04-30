@@ -1,4 +1,4 @@
-# VulnApp 🔓
+# VulnApp
 
 A deliberately vulnerable full-stack web application built with:
 
@@ -13,12 +13,12 @@ This project is designed for **learning and demonstrating common web vulnerabili
 - SQL Injection (in login)
 - Broken Authentication (session handling)
 
-⚠️ This app is intentionally insecure.  
+This app is intentionally insecure.  
 Do **NOT** deploy to production.
 
 ---
 
-# 📸 Features
+# Features
 
 - User registration & login (SQLi vulnerable)
 - Session-based authentication
@@ -27,7 +27,7 @@ Do **NOT** deploy to production.
 - Stored XSS in posts
 - Admin endpoint (no proper access control)
 
-# ⚙️ Setup Instructions
+# Setup Instructions
 
 ## Backend (Flask)
 
